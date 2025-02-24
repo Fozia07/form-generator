@@ -1,8 +1,4 @@
 import streamlit as st
-import uvicorn
-from fastapi import FastAPI
-
-app = FastAPI()
 
 st.set_page_config(page_title="Form Generator", layout="centered")
 
@@ -48,6 +44,3 @@ st.write("Gernate your form dynamically ")
 fields_input = "Name, Last Name, Age,Email, Education, Skill"
 field_list = [f.strip() for f in fields_input.split(",") if f.strip()]
 generate_form(field_list)
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
